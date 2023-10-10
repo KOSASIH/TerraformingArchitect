@@ -359,3 +359,61 @@ We then create a heat map visualization using `plt.imshow()`, specifying the col
 Finally, we save the visualization to a file (`temperature_heatmap.png`) and display it using `plt.show()`.
 
 Please note that this code snippet is a starting point and may need to be customized based on your specific requirements and data.
+
+## Simulate Organism Growth
+
+```python
+import numpy as np
+
+def simulate_organism_growth(celestial_body, organisms, duration):
+    """
+    Simulate the growth and evolution of introduced organisms on a terraformed celestial body.
+    
+    Args:
+    - celestial_body (CelestialBody): The terraformed celestial body object.
+    - organisms (list): List of Organism objects representing the introduced organisms.
+    - duration (int): The duration of the simulation in time steps.
+    
+    Returns:
+    - List of population sizes for each organism at each time step.
+    """
+    population_sizes = [[] for _ in range(len(organisms))]
+    
+    for t in range(duration):
+        # Calculate available resources for each organism
+        available_resources = celestial_body.available_resources()
+        
+        for i, organism in enumerate(organisms):
+            # Calculate the growth rate based on resource availability and competition
+            growth_rate = organism.calculate_growth_rate(available_resources)
+            
+            # Update the population size based on the growth rate
+            population_size = organism.population_size * growth_rate
+            organism.population_size = population_size
+            
+            # Store the population size at each time step
+            population_sizes[i].append(population_size)
+    
+    return population_sizes
+
+class CelestialBody:
+    def __init__(self, atmospheric_composition, temperature, resource_availability):
+        self.atmospheric_composition = atmospheric_composition
+        self.temperature = temperature
+        self.resource_availability = resource_availability
+    
+    def available_resources(self):
+        # Calculate and return the available resources based on the celestial body's characteristics
+        return self.resource_availability
+
+class Organism:
+    def __init__(self, population_size, growth_rate_parameters):
+        self.population_size = population_size
+        self.growth_rate_parameters = growth_rate_parameters
+    
+    def calculate_growth_rate(self, available_resources):
+        # Calculate and return the growth rate based on the available resources and growth rate parameters
+        return np.prod(available_resources) * self.growth_rate_parameters
+```
+
+To use the `simulate_organism_growth` function, you would need to create instances of `CelestialBody` and `Organism` classes, and pass them along with the desired duration to the function. The function will return a list of population sizes for each organism at each time step.
