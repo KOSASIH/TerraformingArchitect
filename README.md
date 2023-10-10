@@ -983,3 +983,54 @@ The energy required for maintaining solar radiation is calculated by multiplying
 Finally, the function returns the total energy requirements.
 
 In the example usage, we provide sample values for the atmospheric composition, temperature, and solar radiation. The function is called with these values and the calculated energy requirements are printed.
+
+## Celestial Body Selection
+
+```markdown
+# Celestial Body Selection Tool
+
+## Criteria Selection
+
+### Size
+- [ ] Small
+- [ ] Medium
+- [ ] Large
+
+### Composition
+- [ ] Rocky
+- [ ] Gaseous
+- [ ] Ice
+
+### Distance from the Sun
+- [ ] Close
+- [ ] Moderate
+- [ ] Far
+
+## Selected Criteria
+- [ ] Size: Small
+- [ ] Composition: Rocky
+- [ ] Distance from the Sun: Close
+
+## Available Celestial Bodies
+
+### Mercury
+- Size: Small
+- Composition: Rocky
+- Distance from the Sun: Close
+
+### Mars
+- Size: Small
+- Composition: Rocky
+- Distance from the Sun: Moderate
+
+### Pluto
+- Size: Small
+- Composition: Ice
+- Distance from the Sun: Far
+
+## Selected Celestial Body
+- [x] Mercury
+
+To select a celestial body, simply mark the checkboxes next to the desired criteria and the available celestial bodies. Once you have made your selection, mark the checkbox next to the selected celestial body.
+
+```
