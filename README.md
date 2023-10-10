@@ -788,3 +788,44 @@ The `land_cover` array represents the land cover of the celestial body, where hi
 The script uses matplotlib to create a 3D plot. It generates a grid of coordinates based on the shape of the input arrays. It then plots the `land_cover` as a surface using a terrain colormap. The `elevation` data is represented as color, where higher values are shown with a different color. The `atmospheric_composition` is shown as a colorbar.
 
 Finally, an example usage is provided where random arrays are used as input. You can replace these arrays with your own data to visualize the terraformed celestial body based on the specific factors you are interested in.
+
+## Calculate Energy Requirement
+
+To calculate the energy requirements for maintaining the desired atmospheric conditions on a terraformed celestial body, you can use the following function:
+
+```python
+def calculate_energy_requirements(atmospheric_composition, temperature, solar_radiation):
+    # Constants
+    specific_heat_capacity = 1000  # J/kg·K
+    surface_area = 4 * 3.14 * (radius ** 2)  # Assuming a spherical celestial body
+    time_period = 24 * 60 * 60  # Time period for which energy requirements are calculated (in seconds)
+
+    # Calculate energy requirements
+    energy_requirements = specific_heat_capacity * surface_area * temperature * time_period
+
+    # Adjust energy requirements based on atmospheric composition and solar radiation
+    if atmospheric_composition == "oxygen":
+        energy_requirements *= 1.2  # Increase energy requirements for oxygen-rich atmospheres
+    elif atmospheric_composition == "carbon_dioxide":
+        energy_requirements *= 1.5  # Increase energy requirements for carbon dioxide-rich atmospheres
+
+    if solar_radiation == "high":
+        energy_requirements *= 1.2  # Increase energy requirements for high solar radiation
+    elif solar_radiation == "low":
+        energy_requirements *= 0.8  # Decrease energy requirements for low solar radiation
+
+    return energy_requirements
+```
+
+To use the function and calculate the energy requirements, you can call it with the appropriate parameters:
+
+```python
+atmospheric_composition = "oxygen"
+temperature = 25  # Celsius
+solar_radiation = "high"
+
+energy_requirements = calculate_energy_requirements(atmospheric_composition, temperature, solar_radiation)
+print(f"The energy requirements for maintaining the desired atmospheric conditions are {energy_requirements} Joules.")
+```
+
+This code snippet demonstrates how to use the function to calculate the energy requirements for maintaining the desired atmospheric conditions on a terraformed celestial body. You can customize the values of `atmospheric_composition`, `temperature`, and `solar_radiation` to suit your specific scenario.
