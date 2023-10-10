@@ -679,3 +679,112 @@ This function `simulate_organism_growth` takes in a 2D numpy array representing 
 The function iterates over the time steps and for each organism, calculates the growth rate based on available resources, population, mortality rate, and competition factor. It then updates the population based on the growth rate and the organism's state. The simulation continues for the specified number of time steps and returns the final state of the organisms.
 
 The example usage demonstrates how to use the function by providing a celestial body terrain, organisms with their initial properties, and the number of time steps. It then prints the final state of the organisms after the simulation.
+
+## Design User Interface 
+
+To design a user interface for a terraforming simulation tool, we can make use of a graphical user interface (GUI) library such as Tkinter in Python. Tkinter provides a simple and easy-to-use interface for creating windows, buttons, input fields, and other GUI components.
+
+Here's a markdown code snippet that demonstrates how to design the user interface and run a terraforming simulation:
+
+```python
+import tkinter as tk
+
+def run_simulation():
+    # Get user inputs
+    celestial_body = celestial_body_entry.get()
+    atmospheric_conditions = atmospheric_conditions_entry.get()
+    ecosystem_constraints = ecosystem_constraints_entry.get()
+
+    # Perform terraforming simulation
+    # Your code for the terraforming simulation goes here
+
+    # Display simulation results
+    simulation_results_label.config(text="Simulation completed!")
+
+# Create the main window
+window = tk.Tk()
+window.title("Terraforming Simulation Tool")
+
+# Create input fields for celestial body characteristics, atmospheric conditions, and ecosystem constraints
+celestial_body_label = tk.Label(window, text="Celestial Body:")
+celestial_body_label.pack()
+celestial_body_entry = tk.Entry(window)
+celestial_body_entry.pack()
+
+atmospheric_conditions_label = tk.Label(window, text="Atmospheric Conditions:")
+atmospheric_conditions_label.pack()
+atmospheric_conditions_entry = tk.Entry(window)
+atmospheric_conditions_entry.pack()
+
+ecosystem_constraints_label = tk.Label(window, text="Ecosystem Constraints:")
+ecosystem_constraints_label.pack()
+ecosystem_constraints_entry = tk.Entry(window)
+ecosystem_constraints_entry.pack()
+
+# Create a button to run the simulation
+run_simulation_button = tk.Button(window, text="Run Simulation", command=run_simulation)
+run_simulation_button.pack()
+
+# Create a label to display simulation results
+simulation_results_label = tk.Label(window, text="")
+simulation_results_label.pack()
+
+# Start the GUI event loop
+window.mainloop()
+```
+
+To use the interface, you can copy the code snippet into a Python file and run it. It will open a window with input fields for celestial body characteristics, atmospheric conditions, and ecosystem constraints. After entering the desired parameters, click the "Run Simulation" button to initiate the terraforming simulation. The simulation results will be displayed in the label below the button.
+
+Please note that the code provided only demonstrates the user interface design and does not include the actual terraforming simulation logic. You would need to implement the terraforming simulation code within the `run_simulation` function to perform the desired calculations and generate the results. 
+
+## Generate 3D Visualization 
+
+```python
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
+
+def generate_3d_visualization(land_cover, atmospheric_composition, elevation):
+    # Generate grid of coordinates
+    x = np.linspace(0, 1, land_cover.shape[1])
+    y = np.linspace(0, 1, land_cover.shape[0])
+    X, Y = np.meshgrid(x, y)
+
+    # Create figure and 3D axes
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+
+    # Plot land cover as surface
+    ax.plot_surface(X, Y, land_cover, cmap='terrain')
+
+    # Set labels and title
+    ax.set_xlabel('X')
+    ax.set_ylabel('Y')
+    ax.set_zlabel('Z')
+    ax.set_title('Terraformed Celestial Body')
+
+    # Set elevation data as color
+    ax.scatter(X, Y, elevation, c=elevation, cmap='viridis')
+
+    # Show atmospheric composition as colorbar
+    cbar = plt.colorbar(ax.scatter([], [], [], c=[], cmap='viridis'))
+    cbar.set_label('Atmospheric Composition')
+
+    # Show the 3D visualization
+    plt.show()
+
+# Example usage
+land_cover = np.random.rand(10, 10)
+atmospheric_composition = np.random.rand(10, 10)
+elevation = np.random.rand(10, 10)
+
+generate_3d_visualization(land_cover, atmospheric_composition, elevation)
+```
+
+This code snippet demonstrates how to generate a 3D visualization of a terraformed celestial body. The `generate_3d_visualization` function takes three input arrays: `land_cover`, `atmospheric_composition`, and `elevation`. 
+
+The `land_cover` array represents the land cover of the celestial body, where higher values indicate more land or solid surface. The `atmospheric_composition` array represents the atmospheric composition, where higher values indicate a higher concentration of a particular gas or element. The `elevation` array represents the elevation of the celestial body, where higher values indicate higher elevations.
+
+The script uses matplotlib to create a 3D plot. It generates a grid of coordinates based on the shape of the input arrays. It then plots the `land_cover` as a surface using a terrain colormap. The `elevation` data is represented as color, where higher values are shown with a different color. The `atmospheric_composition` is shown as a colorbar.
+
+Finally, an example usage is provided where random arrays are used as input. You can replace these arrays with your own data to visualize the terraformed celestial body based on the specific factors you are interested in.
