@@ -71,3 +71,48 @@ Output:
 ```
 
 Note: The calculations for materials and energy requirements are just placeholders and should be replaced with appropriate formulas based on the specific requirements of terraforming celestial bodies.
+
+## 
+
+```markdown
+To embed a 3D model of a planet or celestial body in a markdown document, you can use the following code snippet:
+
+```html
+<iframe src="https://your-3d-model-website.com/your-model" width="800" height="600"></iframe>
+```
+
+Replace "https://your-3d-model-website.com/your-model" with the actual URL of your 3D model. Adjust the width and height attributes as per your preference.
+
+To generate a 3D model of a planet or celestial body, you can use a 3D modeling software like Blender. Here's a script that demonstrates how to generate a simple 3D model of a planet using Blender's Python API:
+
+```python
+import bpy
+
+# Clear existing scene
+bpy.ops.object.select_all(action='DESELECT')
+bpy.ops.object.select_by_type(type='MESH')
+bpy.ops.object.delete()
+
+# Create a sphere
+bpy.ops.mesh.primitive_uv_sphere_add(radius=5, location=(0, 0, 0))
+
+# Apply a material to the sphere
+bpy.context.object.data.materials.append(bpy.data.materials['Planet Material'])
+
+# Set up the rendering settings
+bpy.context.scene.render.engine = 'CYCLES'
+bpy.context.scene.cycles.samples = 100
+
+# Render the 3D model
+bpy.ops.render.render(write_still=True)
+
+# Save the rendered image
+bpy.data.images['Render Result'].save_render(filepath='planet.png')
+```
+
+This script creates a simple sphere representing a planet, applies a material to it, and renders the 3D model. The rendered image is saved as "planet.png". You can customize this script to create more complex 3D models by modifying the shape, materials, and rendering settings.
+
+Remember to install Blender and its Python API before running this script. You can find more information about Blender's Python API in the official documentation.
+
+Once you have the 3D model and the rendered image, you can upload them to a 3D model hosting service or your own website. Then, use the provided code snippet to embed the 3D model in your markdown document.
+```
