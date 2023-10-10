@@ -829,3 +829,47 @@ print(f"The energy requirements for maintaining the desired atmospheric conditio
 ```
 
 This code snippet demonstrates how to use the function to calculate the energy requirements for maintaining the desired atmospheric conditions on a terraformed celestial body. You can customize the values of `atmospheric_composition`, `temperature`, and `solar_radiation` to suit your specific scenario.
+
+## 
+
+```python
+import tkinter as tk
+from tkinter import ttk
+
+def select_celestial_body():
+    selected_body = body_combobox.get()
+    print(f"Selected celestial body: {selected_body}")
+
+root = tk.Tk()
+root.title("Celestial Body Selection Tool")
+
+# Create labels and comboboxes for each criteria
+size_label = ttk.Label(root, text="Size:")
+size_label.grid(row=0, column=0, padx=10, pady=5, sticky=tk.W)
+size_combobox = ttk.Combobox(root, values=["Small", "Medium", "Large"])
+size_combobox.grid(row=0, column=1, padx=10, pady=5, sticky=tk.W)
+
+composition_label = ttk.Label(root, text="Composition:")
+composition_label.grid(row=1, column=0, padx=10, pady=5, sticky=tk.W)
+composition_combobox = ttk.Combobox(root, values=["Rocky", "Gaseous", "Mixed"])
+composition_combobox.grid(row=1, column=1, padx=10, pady=5, sticky=tk.W)
+
+distance_label = ttk.Label(root, text="Distance from Sun:")
+distance_label.grid(row=2, column=0, padx=10, pady=5, sticky=tk.W)
+distance_combobox = ttk.Combobox(root, values=["Close", "Moderate", "Far"])
+distance_combobox.grid(row=2, column=1, padx=10, pady=5, sticky=tk.W)
+
+# Create a button to select the celestial body
+select_button = ttk.Button(root, text="Select", command=select_celestial_body)
+select_button.grid(row=3, column=0, columnspan=2, padx=10, pady=10)
+
+root.mainloop()
+```
+
+This code snippet demonstrates how to create a simple user interface using the tkinter library in Python. The interface allows users to select a celestial body based on criteria such as size, composition, and distance from the sun.
+
+The interface consists of three comboboxes for selecting the size, composition, and distance of the celestial body. The values in each combobox are pre-defined options that the user can choose from.
+
+There is also a "Select" button that triggers the `select_celestial_body()` function when clicked. This function retrieves the selected celestial body from the comboboxes and prints it to the console. You can modify this function to perform further actions based on the selected celestial body.
+
+To use the interface, simply run the code and interact with the comboboxes to select the desired criteria. Click the "Select" button to retrieve the selected celestial body.
