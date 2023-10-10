@@ -116,3 +116,60 @@ Remember to install Blender and its Python API before running this script. You c
 
 Once you have the 3D model and the rendered image, you can upload them to a 3D model hosting service or your own website. Then, use the provided code snippet to embed the 3D model in your markdown document.
 ```
+## Build Machine Learning Model
+
+To build a machine learning model that predicts the long-term effects of terraforming on a celestial body's ecosystem, we can use a supervised learning approach. We will need a dataset that includes information about the initial conditions of the celestial body, the changes made during terraforming, and the resulting ecosystem changes. Here's an example of how you can train and use the model using Python and scikit-learn:
+
+```python
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error
+
+# Load the dataset
+dataset = pd.read_csv('terraforming_dataset.csv')
+
+# Split the dataset into features (X) and target variable (y)
+X = dataset.drop('ecosystem_changes', axis=1)
+y = dataset['ecosystem_changes']
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize the random forest regressor model
+model = RandomForestRegressor()
+
+# Train the model
+model.fit(X_train, y_train)
+
+# Make predictions on the test set
+y_pred = model.predict(X_test)
+
+# Evaluate the model using mean squared error
+mse = mean_squared_error(y_test, y_pred)
+
+# Print the mean squared error
+print("Mean Squared Error:", mse)
+```
+
+In this example, we assume that you have a dataset called "terraforming_dataset.csv" that contains the necessary information for training the model. The dataset should include columns for the initial conditions, terraforming changes, and the resulting ecosystem changes.
+
+Once the model is trained, you can use it to make predictions on new data by calling the `predict()` method on the trained model. For example:
+
+```python
+# New data for prediction
+new_data = pd.DataFrame({
+    'initial_conditions': [0.5, 0.7, 0.3],
+    'terraforming_changes': [0.2, 0.4, 0.6]
+})
+
+# Make predictions on new data
+predictions = model.predict(new_data)
+
+# Print the predictions
+print("Predictions:", predictions)
+```
+
+This code snippet demonstrates how to use the trained model to predict the ecosystem changes based on new data.
+
+Please note that this code is a basic example and may need to be adapted to your specific dataset and requirements. Additionally, it's important to have a well-curated and diverse dataset to train an accurate model for predicting the long-term effects of terraforming on a celestial body's ecosystem.
