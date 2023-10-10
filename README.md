@@ -571,3 +571,111 @@ The script uses the `numpy` library to generate random temperature data for demo
 The `matplotlib.pyplot` library is used to create the heat map visualization. The `generate_heatmap` function takes the temperature data as input and generates the heat map plot. The color map is set to 'hot', which represents higher temperatures with warmer colors. The minimum and maximum temperature values are used to set the color range of the heat map.
 
 The resulting heat map plot includes a colorbar to indicate the temperature scale, as well as a title and labels for the axes. The plot is displayed using `plt.show()`.
+
+## 
+
+```python
+import numpy as np
+
+def simulate_organism_growth(celestial_body, organisms, time_steps):
+    """
+    Simulates the growth and evolution of introduced organisms on a terraformed celestial body.
+    
+    Parameters:
+    - celestial_body: 2D numpy array representing the celestial body's terrain or environment
+    - organisms: List of dictionaries representing the introduced organisms with their initial properties
+                 Each organism dictionary should have the following keys: 'name', 'population', 'reproduction_rate',
+                 'mortality_rate', 'resource_consumption_rate', 'competition_factor'
+    - time_steps: Number of time steps to simulate
+    
+    Returns:
+    - List of dictionaries representing the final state of the organisms after the simulation
+    """
+    
+    # Initialize the organisms' state
+    organisms_state = []
+    for organism in organisms:
+        organism_state = {
+            'name': organism['name'],
+            'population': [organism['population']],
+            'reproduction_rate': organism['reproduction_rate'],
+            'mortality_rate': organism['mortality_rate'],
+            'resource_consumption_rate': organism['resource_consumption_rate'],
+            'competition_factor': organism['competition_factor']
+        }
+        organisms_state.append(organism_state)
+    
+    # Simulate the growth and evolution of organisms
+    for _ in range(time_steps):
+        new_organisms_state = []
+        
+        for organism_state in organisms_state:
+            population = organism_state['population'][-1]
+            reproduction_rate = organism_state['reproduction_rate']
+            mortality_rate = organism_state['mortality_rate']
+            resource_consumption_rate = organism_state['resource_consumption_rate']
+            competition_factor = organism_state['competition_factor']
+            
+            # Calculate the growth rate based on available resources and competition
+            available_resources = np.sum(celestial_body)
+            growth_rate = reproduction_rate * available_resources / (population + 1)
+            growth_rate -= mortality_rate * population
+            growth_rate -= competition_factor * population * np.sum([org['population'][-1] for org in organisms_state])
+            
+            # Update the population based on the growth rate
+            new_population = max(0, population + growth_rate)
+            
+            # Update the organism's state
+            new_organism_state = {
+                'name': organism_state['name'],
+                'population': organism_state['population'] + [new_population],
+                'reproduction_rate': organism_state['reproduction_rate'],
+                'mortality_rate': organism_state['mortality_rate'],
+                'resource_consumption_rate': organism_state['resource_consumption_rate'],
+                'competition_factor': organism_state['competition_factor']
+            }
+            
+            new_organisms_state.append(new_organism_state)
+        
+        organisms_state = new_organisms_state
+    
+    return organisms_state
+```
+
+Example usage:
+
+```python
+celestial_body = np.array([[0.5, 0.8, 0.2],
+                           [0.3, 0.4, 0.6],
+                           [0.9, 0.7, 0.1]])
+
+organisms = [
+    {
+        'name': 'Organism A',
+        'population': 100,
+        'reproduction_rate': 0.1,
+        'mortality_rate': 0.05,
+        'resource_consumption_rate': 0.2,
+        'competition_factor': 0.1
+    },
+    {
+        'name': 'Organism B',
+        'population': 50,
+        'reproduction_rate': 0.05,
+        'mortality_rate': 0.1,
+        'resource_consumption_rate': 0.1,
+        'competition_factor': 0.2
+    }
+]
+
+time_steps = 10
+
+result = simulate_organism_growth(celestial_body, organisms, time_steps)
+print(result)
+```
+
+This function `simulate_organism_growth` takes in a 2D numpy array representing the celestial body's terrain or environment, a list of dictionaries representing the introduced organisms with their initial properties, and the number of time steps to simulate. It returns a list of dictionaries representing the final state of the organisms after the simulation.
+
+The function iterates over the time steps and for each organism, calculates the growth rate based on available resources, population, mortality rate, and competition factor. It then updates the population based on the growth rate and the organism's state. The simulation continues for the specified number of time steps and returns the final state of the organisms.
+
+The example usage demonstrates how to use the function by providing a celestial body terrain, organisms with their initial properties, and the number of time steps. It then prints the final state of the organisms after the simulation.
