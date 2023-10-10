@@ -72,7 +72,7 @@ Output:
 
 Note: The calculations for materials and energy requirements are just placeholders and should be replaced with appropriate formulas based on the specific requirements of terraforming celestial bodies.
 
-## 
+## Embed A 3D Model
 
 ```markdown
 To embed a 3D model of a planet or celestial body in a markdown document, you can use the following code snippet:
