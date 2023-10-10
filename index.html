@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Terraforming Simulation Tool</title>
+  <style>
+    /* CSS styles for the interface */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 5px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f5f5f5;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Terraforming Simulation Tool</h1>
+
+    <form id="simulationForm">
+      <label for="celestialBody">Celestial Body:</label>
+      <select id="celestialBody">
+        <option value="earth">Earth</option>
+        <option value="mars">Mars</option>
+        <option value="venus">Venus</option>
+        <!-- Add more celestial bodies as needed -->
+      </select>
+
+      <label for="atmosphericConditions">Desired Atmospheric Conditions:</label>
+      <input type="text" id="atmosphericConditions" placeholder="e.g., oxygen-rich, nitrogen-dominated">
+
+      <label for="ecosystemConstraints">Ecosystem Constraints:</label>
+      <input type="text" id="ecosystemConstraints" placeholder="e.g., water-based, diverse flora and fauna">
+
+      <button type="submit">Run Simulation</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    // JavaScript code to handle the form submission and run the simulation
+    const form = document.getElementById('simulationForm');
+    const resultDiv = document.getElementById('result');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Get the selected celestial body, atmospheric conditions, and ecosystem constraints
+      const celestialBody = document.getElementById('celestialBody').value;
+      const atmosphericConditions = document.getElementById('atmosphericConditions').value;
+      const ecosystemConstraints = document.getElementById('ecosystemConstraints').value;
+
+      // Perform the simulation and display the result
+      const simulationResult = runSimulation(celestialBody, atmosphericConditions, ecosystemConstraints);
+      resultDiv.textContent = simulationResult;
+    });
+
+    function runSimulation(celestialBody, atmosphericConditions, ecosystemConstraints) {
+      // Add your terraforming simulation logic here
+      // This function should return the result of the simulation
+
+      // Example simulation result
+      return `Simulation result for ${celestialBody}:
+        - Atmospheric conditions: ${atmosphericConditions}
+        - Ecosystem constraints: ${ecosystemConstraints}
+        - Terraforming success: 80%`;
+    }
+  </script>
+</body>
+</html>
