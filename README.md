@@ -417,3 +417,157 @@ class Organism:
 ```
 
 To use the `simulate_organism_growth` function, you would need to create instances of `CelestialBody` and `Organism` classes, and pass them along with the desired duration to the function. The function will return a list of population sizes for each organism at each time step.
+
+## Design User Interface 
+
+To design a user interface for a terraforming simulation tool, we can use a combination of HTML, CSS, and JavaScript. Here's an example of how the interface can be implemented:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Terraforming Simulation Tool</title>
+  <style>
+    /* CSS styles for the interface */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 5px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f5f5f5;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Terraforming Simulation Tool</h1>
+
+    <form id="simulationForm">
+      <label for="celestialBody">Celestial Body:</label>
+      <select id="celestialBody">
+        <option value="earth">Earth</option>
+        <option value="mars">Mars</option>
+        <option value="venus">Venus</option>
+        <!-- Add more celestial bodies as needed -->
+      </select>
+
+      <label for="atmosphericConditions">Desired Atmospheric Conditions:</label>
+      <input type="text" id="atmosphericConditions" placeholder="e.g., oxygen-rich, nitrogen-dominated">
+
+      <label for="ecosystemConstraints">Ecosystem Constraints:</label>
+      <input type="text" id="ecosystemConstraints" placeholder="e.g., water-based, diverse flora and fauna">
+
+      <button type="submit">Run Simulation</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    // JavaScript code to handle the form submission and run the simulation
+    const form = document.getElementById('simulationForm');
+    const resultDiv = document.getElementById('result');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Get the selected celestial body, atmospheric conditions, and ecosystem constraints
+      const celestialBody = document.getElementById('celestialBody').value;
+      const atmosphericConditions = document.getElementById('atmosphericConditions').value;
+      const ecosystemConstraints = document.getElementById('ecosystemConstraints').value;
+
+      // Perform the simulation and display the result
+      const simulationResult = runSimulation(celestialBody, atmosphericConditions, ecosystemConstraints);
+      resultDiv.textContent = simulationResult;
+    });
+
+    function runSimulation(celestialBody, atmosphericConditions, ecosystemConstraints) {
+      // Add your terraforming simulation logic here
+      // This function should return the result of the simulation
+
+      // Example simulation result
+      return `Simulation result for ${celestialBody}:
+        - Atmospheric conditions: ${atmosphericConditions}
+        - Ecosystem constraints: ${ecosystemConstraints}
+        - Terraforming success: 80%`;
+    }
+  </script>
+</body>
+</html>
+```
+
+This code creates a simple user interface with a form that allows users to input the desired parameters for the terraforming simulation. When the user submits the form, the JavaScript code handles the form submission, runs the simulation based on the provided parameters, and displays the result in a designated div element.
+
+Please note that this code is just a basic example and may need to be customized or extended based on specific requirements or additional functionality desired for the terraforming simulation tool.
+
+## Generate Heat Map 
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+def generate_heatmap(temperature_data):
+    # Calculate the temperature range for the color map
+    min_temp = np.min(temperature_data)
+    max_temp = np.max(temperature_data)
+    
+    # Create a figure and axis for the heat map
+    fig, ax = plt.subplots()
+    
+    # Generate the heat map
+    heatmap = ax.imshow(temperature_data, cmap='hot', vmin=min_temp, vmax=max_temp)
+    
+    # Add a colorbar to the heat map
+    cbar = fig.colorbar(heatmap, ax=ax)
+    
+    # Set the title and labels for the heat map
+    ax.set_title('Temperature Changes on Terraformed Celestial Body')
+    ax.set_xlabel('Longitude')
+    ax.set_ylabel('Latitude')
+    
+    # Show the heat map
+    plt.show()
+
+# Example usage
+temperature_data = np.random.rand(10, 10)  # Replace with actual temperature data
+generate_heatmap(temperature_data)
+```
+
+This script generates a heat map visualization of the temperature changes on a terraformed celestial body. The `temperature_data` variable should be replaced with the actual temperature data for the celestial body.
+
+The script uses the `numpy` library to generate random temperature data for demonstration purposes. In practice, you would replace this with the actual temperature data obtained from your simulation or model.
+
+The `matplotlib.pyplot` library is used to create the heat map visualization. The `generate_heatmap` function takes the temperature data as input and generates the heat map plot. The color map is set to 'hot', which represents higher temperatures with warmer colors. The minimum and maximum temperature values are used to set the color range of the heat map.
+
+The resulting heat map plot includes a colorbar to indicate the temperature scale, as well as a title and labels for the axes. The plot is displayed using `plt.show()`.
