@@ -223,3 +223,54 @@ generate_heat_map(atmospheric_composition='nitrogen', land_cover='forest', solar
 
 This script generates a heat map visualization of the temperature changes on a terraformed celestial body. The temperature changes are calculated based on factors such as atmospheric composition, land cover, and solar radiation. The script uses predefined temperature ranges for different atmospheric compositions and land cover temperature modifiers to determine the temperature changes. It then generates a random heat map using the calculated temperature changes and plots it using matplotlib.
 
+## Simulate Organism Growth 
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+def simulate_organism_growth(organism_population, resource_availability, competition_factor, generations):
+    """
+    Simulates the growth and evolution of introduced organisms on a terraformed celestial body.
+    
+    Args:
+    - organism_population (float): Initial population of the introduced organisms.
+    - resource_availability (float): Availability of resources for the organisms.
+    - competition_factor (float): Factor representing the competition for resources.
+    - generations (int): Number of generations to simulate.
+    
+    Returns:
+    - List[float]: List of population sizes for each generation.
+    """
+    population_sizes = [organism_population]
+    
+    for _ in range(generations):
+        population = population_sizes[-1]
+        new_population = population + (resource_availability * population) - (competition_factor * population**2)
+        population_sizes.append(new_population)
+    
+    return population_sizes
+
+# Example usage
+initial_population = 1000
+resource_availability = 0.8
+competition_factor = 0.001
+generations = 10
+
+population_sizes = simulate_organism_growth(initial_population, resource_availability, competition_factor, generations)
+
+# Plotting the population sizes over generations
+plt.plot(range(generations + 1), population_sizes)
+plt.xlabel('Generation')
+plt.ylabel('Population Size')
+plt.title('Organism Population Growth')
+plt.show()
+```
+
+This code defines a function `simulate_organism_growth` that simulates the growth and evolution of introduced organisms on a terraformed celestial body. It takes into account factors such as population dynamics, resource availability, and competition for resources.
+
+To use the function, you need to provide the initial population of the introduced organisms (`organism_population`), the availability of resources for the organisms (`resource_availability`), the competition factor representing the competition for resources (`competition_factor`), and the number of generations to simulate (`generations`).
+
+The function returns a list of population sizes for each generation. You can then use this data for further analysis or visualization.
+
+In the example usage, the function is called with some example values, and the resulting population sizes are plotted using matplotlib. The x-axis represents the generations, and the y-axis represents the population size.
