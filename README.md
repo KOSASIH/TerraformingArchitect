@@ -873,3 +873,54 @@ The interface consists of three comboboxes for selecting the size, composition, 
 There is also a "Select" button that triggers the `select_celestial_body()` function when clicked. This function retrieves the selected celestial body from the comboboxes and prints it to the console. You can modify this function to perform further actions based on the selected celestial body.
 
 To use the interface, simply run the code and interact with the comboboxes to select the desired criteria. Click the "Select" button to retrieve the selected celestial body.
+
+## Generate 3D Visualization
+
+```python
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
+
+def generate_3d_visualization(land_cover, atmospheric_composition, elevation):
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+
+    # Generate x, y, z coordinates for each point on the celestial body
+    x = np.arange(0, land_cover.shape[0])
+    y = np.arange(0, land_cover.shape[1])
+    x, y = np.meshgrid(x, y)
+    z = elevation * land_cover
+
+    # Create a colormap based on atmospheric composition
+    colors = atmospheric_composition * 255
+
+    # Plot the 3D surface
+    ax.plot_surface(x, y, z, facecolors=plt.cm.viridis(colors), linewidth=0)
+
+    # Set axis labels and title
+    ax.set_xlabel('X')
+    ax.set_ylabel('Y')
+    ax.set_zlabel('Z')
+    ax.set_title('Terraformed Celestial Body Visualization')
+
+    # Show the plot
+    plt.show()
+
+# Example usage
+land_cover = np.random.rand(10, 10)
+atmospheric_composition = np.random.rand(10, 10)
+elevation = 100
+
+generate_3d_visualization(land_cover, atmospheric_composition, elevation)
+```
+
+This script generates a 3D visualization of a terraformed celestial body using matplotlib. It takes into account factors such as land cover, atmospheric composition, and elevation.
+
+To use the script, you need to provide the following inputs:
+- `land_cover`: a 2D array representing the land cover of the celestial body. Each element represents the land cover value at a specific point on the celestial body.
+- `atmospheric_composition`: a 2D array representing the atmospheric composition of the celestial body. Each element represents the atmospheric composition value at a specific point on the celestial body.
+- `elevation`: a scalar value representing the elevation of the celestial body.
+
+The script generates a 3D surface plot where the x and y coordinates represent the position on the celestial body, the z coordinate represents the elevation, and the color of each point represents the atmospheric composition.
+
+You can customize the input data to visualize different terraformed celestial bodies by modifying the `land_cover`, `atmospheric_composition`, and `elevation` variables.
