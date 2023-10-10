@@ -176,7 +176,7 @@ This code snippet demonstrates how to use the trained model to predict the ecosy
 
 Please note that this code is a basic example and may need to be adapted to your specific dataset and requirements. Additionally, it's important to have a well-curated and diverse dataset to train an accurate model for predicting the long-term effects of terraforming on a celestial body's ecosystem.
 
-## Generate Hit Map 
+## Generate Heat Map 
 
 ```python
 import numpy as np
@@ -274,3 +274,50 @@ To use the function, you need to provide the initial population of the introduce
 The function returns a list of population sizes for each generation. You can then use this data for further analysis or visualization.
 
 In the example usage, the function is called with some example values, and the resulting population sizes are plotted using matplotlib. The x-axis represents the generations, and the y-axis represents the population size.
+
+## Design User Interface
+
+To design the user interface for a terraforming simulation tool, we can make use of the Python library called `PySimpleGUI`. This library provides a simple and easy-to-use interface for creating GUI applications. Here's an example of how you can use `PySimpleGUI` to create the interface:
+
+```python
+import PySimpleGUI as sg
+
+# Define the layout of the interface
+layout = [
+    [sg.Text('Celestial Body Characteristics')],
+    [sg.Text('Size:', size=(15, 1)), sg.InputText()],
+    [sg.Text('Terrain:', size=(15, 1)), sg.InputText()],
+    [sg.Text('Atmosphere:', size=(15, 1)), sg.InputText()],
+    [sg.Text('')],
+    [sg.Text('Desired Atmospheric Conditions')],
+    [sg.Text('Composition:', size=(15, 1)), sg.InputText()],
+    [sg.Text('Temperature:', size=(15, 1)), sg.InputText()],
+    [sg.Text('')],
+    [sg.Text('Ecosystem Constraints')],
+    [sg.Text('Land Cover:', size=(15, 1)), sg.InputText()],
+    [sg.Text('Solar Radiation:', size=(15, 1)), sg.InputText()],
+    [sg.Text('')],
+    [sg.Button('Run Simulation')]
+]
+
+# Create the window using the layout
+window = sg.Window('Terraforming Simulation', layout)
+
+# Event loop to process user input
+while True:
+    event, values = window.read()
+    
+    # If the window is closed or the "Run Simulation" button is clicked, exit the loop
+    if event == sg.WINDOW_CLOSED or event == 'Run Simulation':
+        break
+
+    # Process the user input and perform the simulation
+    # Your code for terraforming simulation goes here
+
+# Close the window
+window.close()
+```
+
+You can customize the layout according to your specific requirements by adding or removing input fields and labels. Once the user clicks the "Run Simulation" button, you can retrieve the input values from the `values` dictionary and use them to perform the terraforming simulation.
+
+Please note that the code provided above is only for creating the user interface using `PySimpleGUI`. You would need to add your own code for the terraforming simulation based on the provided parameters.
