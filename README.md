@@ -1034,3 +1034,58 @@ In the example usage, we provide sample values for the atmospheric composition, 
 To select a celestial body, simply mark the checkboxes next to the desired criteria and the available celestial bodies. Once you have made your selection, mark the checkbox next to the selected celestial body.
 
 ```
+## Generate 3D Visualization 
+
+```python
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Function to generate 3D visualization of terraformed celestial body
+def generate_3d_visualization(land_cover, atmospheric_composition, elevation):
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+
+    # Generate grid of x, y coordinates
+    x = range(len(land_cover))
+    y = range(len(land_cover[0]))
+    X, Y = np.meshgrid(x, y)
+
+    # Plot land cover
+    ax.plot_surface(X, Y, land_cover, cmap='Greens')
+
+    # Plot atmospheric composition
+    ax.plot_surface(X, Y, atmospheric_composition, cmap='Blues', alpha=0.5)
+
+    # Plot elevation
+    ax.plot_surface(X, Y, elevation, cmap='terrain', alpha=0.8)
+
+    # Set labels and title
+    ax.set_xlabel('X')
+    ax.set_ylabel('Y')
+    ax.set_zlabel('Z')
+    ax.set_title('Terraformed Celestial Body Visualization')
+
+    # Show the plot
+    plt.show()
+
+# Example usage
+land_cover = [[0.2, 0.4, 0.6],
+              [0.8, 1.0, 0.2],
+              [0.6, 0.8, 0.4]]
+
+atmospheric_composition = [[0.1, 0.3, 0.5],
+                           [0.7, 0.9, 0.2],
+                           [0.4, 0.6, 0.8]]
+
+elevation = [[10, 20, 30],
+             [40, 50, 60],
+             [70, 80, 90]]
+
+generate_3d_visualization(land_cover, atmospheric_composition, elevation)
+```
+
+This script generates a 3D visualization of a terraformed celestial body using matplotlib. It takes three input arrays: `land_cover`, `atmospheric_composition`, and `elevation`. The `land_cover` array represents the land cover on the celestial body, the `atmospheric_composition` array represents the atmospheric composition, and the `elevation` array represents the elevation.
+
+The script uses the `plot_surface` function from matplotlib to plot the land cover, atmospheric composition, and elevation as surfaces in a 3D plot. Each array is plotted on a separate surface, with different color maps to represent different values.
+
+To use the script, you can provide your own input arrays for `land_cover`, `atmospheric_composition`, and `elevation` based on the terraformed celestial body you want to visualize. Then, simply call the `generate_3d_visualization` function with these arrays to generate the 3D visualization. The resulting plot will show the terraformed celestial body with different colors representing the land cover, atmospheric composition, and elevation.
