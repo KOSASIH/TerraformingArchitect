@@ -115,8 +115,10 @@ This script creates a simple sphere representing a planet, applies a material to
 Remember to install Blender and its Python API before running this script. You can find more information about Blender's Python API in the official documentation.
 
 Once you have the 3D model and the rendered image, you can upload them to a 3D model hosting service or your own website. Then, use the provided code snippet to embed the 3D model in your markdown document.
-```
+
 ## Build Machine Learning Model
+
+```
 
 To build a machine learning model that predicts the long-term effects of terraforming on a celestial body's ecosystem, we can use a supervised learning approach. We will need a dataset that includes information about the initial conditions of the celestial body, the changes made during terraforming, and the resulting ecosystem changes. Here's an example of how you can train and use the model using Python and scikit-learn:
 
