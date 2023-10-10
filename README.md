@@ -321,3 +321,41 @@ window.close()
 You can customize the layout according to your specific requirements by adding or removing input fields and labels. Once the user clicks the "Run Simulation" button, you can retrieve the input values from the `values` dictionary and use them to perform the terraforming simulation.
 
 Please note that the code provided above is only for creating the user interface using `PySimpleGUI`. You would need to add your own code for the terraforming simulation based on the provided parameters.
+
+## Generate Heat Map Visualization 
+
+To generate a heat map visualization of temperature changes on a terraformed celestial body, we can use Python and the Matplotlib library. Here's a code snippet that demonstrates how to achieve this:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Generate sample data for temperature changes
+# Replace this with your own data or calculations
+temperature_data = np.random.rand(10, 10)
+
+# Create a heat map visualization
+plt.imshow(temperature_data, cmap='hot', interpolation='nearest')
+plt.colorbar(label='Temperature')
+plt.title('Temperature Changes on Terraformed Celestial Body')
+plt.xlabel('Longitude')
+plt.ylabel('Latitude')
+
+# Customize the colorbar
+colorbar = plt.colorbar()
+colorbar.set_label('Temperature')
+
+# Save the visualization to a file
+plt.savefig('temperature_heatmap.png')
+
+# Show the visualization
+plt.show()
+```
+
+In this code snippet, we first generate sample data for temperature changes on the celestial body. You would need to replace this with your own data or calculations based on factors such as atmospheric composition, land cover, and solar radiation.
+
+We then create a heat map visualization using `plt.imshow()`, specifying the colormap (`'hot'`) and interpolation method (`'nearest'`). We add a colorbar to indicate the temperature scale and provide a title, labels for the x and y axes, and a colorbar label.
+
+Finally, we save the visualization to a file (`temperature_heatmap.png`) and display it using `plt.show()`.
+
+Please note that this code snippet is a starting point and may need to be customized based on your specific requirements and data.
