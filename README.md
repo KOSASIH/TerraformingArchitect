@@ -1143,3 +1143,49 @@ This code defines a function `calculate_energy_requirements` that takes in the d
 The function calculates the energy requirements based on the difference between the desired atmospheric composition, temperature, and solar radiation and the current values. It assumes that the energy requirement is proportional to the difference between the desired and current values for each factor.
 
 An example usage of the function is provided, where the desired atmospheric composition, temperature, and solar radiation are specified. The function is called with these values, and the calculated energy requirements are printed to the console.
+
+## Celestial Body Selection
+
+```markdown
+# Celestial Body Selection Tool
+
+## Criteria Selection
+
+### Size
+- [x] Small
+- [ ] Medium
+- [ ] Large
+
+### Composition
+- [x] Rocky
+- [x] Gaseous
+- [ ] Icy
+
+### Distance from the Sun
+- [x] Close
+- [ ] Moderate
+- [ ] Far
+
+## Selected Celestial Body: Mars
+
+## Terraforming Options
+
+### Atmospheric Composition
+- [x] Increase Oxygen levels
+- [x] Reduce Carbon Dioxide levels
+
+### Temperature Changes
+- [x] Increase average temperature
+- [ ] Decrease average temperature
+
+### Introduction of New Organisms
+- [x] Introduce plant life
+- [ ] Introduce animal life
+
+## Confirm Selection
+
+[Confirm]
+
+```
+
+This markdown code snippet represents a user interface for the celestial body selection tool. The interface allows users to browse and select celestial bodies for terraforming based on criteria such as size, composition, and distance from the sun. The selected celestial body is displayed, and the user can choose various terraforming options such as atmospheric composition, temperature changes, and introduction of new organisms. Finally, the user can confirm their selection.
