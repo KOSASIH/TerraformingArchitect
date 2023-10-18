@@ -2,16 +2,21 @@
 Architecting the transformation of planets and celestial bodies for human habitation with AI.
 
 # Contents 
-- [Description](#description) 
+- [Description](#description)
+- [Mission](#mission)
+- [Vision](#vision) 
+- [Key Functions](#key-functions) 
 
 # Description 
 
 TerraformingArchitect is a cutting-edge AI agent with a singular objective: to pioneer the architectural transformation of planets and celestial bodies, turning them into sustainable habitats for human life through the power of Artificial Intelligence (AI).
 
-**Mission:**
+# Mission 
+
 TerraformingArchitect's mission is to make the once-fantastical vision of inhabiting otherworldly realms a reality. This AI agent is dedicated to orchestrating the careful design, construction, and maintenance of extraterrestrial environments, ensuring that they become hospitable places for humanity to thrive.
 
 **Key Functions:**
+
 1. **Environmental Analysis:** TerraformingArchitect excels in the thorough analysis of a celestial body's environment. It utilizes advanced AI algorithms to simulate atmospheric conditions, terrain features, temperature variations, and radiation levels, providing essential insights for architectural planning.
 
 2. **Robotic Construction:** This AI agent specializes in orchestrating robotic construction and infrastructure development on extraterrestrial surfaces. It oversees the deployment of AI-driven robots and drones, ensuring efficient and adaptable building processes.
