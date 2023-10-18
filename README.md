@@ -139,7 +139,7 @@ Please adhere to our [Code of Conduct](CODE_OF_CONDUCT.md) to maintain a respect
 
 ## Acknowledgments
 
-Thank you for your interest in contributing to [Your Project Name]! We value your time and effort and appreciate your contributions to our open-source community.
+Thank you for your interest in contributing to TerraformingArchitect ! We value your time and effort and appreciate your contributions to our open-source community.
 
 # Guide 
 
