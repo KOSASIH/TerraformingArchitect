@@ -135,7 +135,7 @@ Please adhere to our [Code of Conduct](CODE_OF_CONDUCT.md) to maintain a respect
 
 ### Communication Channels
 - Join our [Gitter chat](https://matrix.to/#/#terraformingarchitect:gitter.im) to interact with the community and get help.
-- You can also follow us on [Twitter](https://twitter.com/your-project) for updates and news.
+- You can also follow us on [Twitter](https://twitter.com/Kosasihg88G) for updates and news.
 
 ## Acknowledgments
 
