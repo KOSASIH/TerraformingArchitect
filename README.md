@@ -99,7 +99,7 @@ To get started, you'll need to set up your development environment. Refer to the
 Before contributing, you should fork the repository to your own GitHub account. Then, clone the forked repository to your local machine.
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
+git clone https://github.com/KOSAAIH/TerraformingArchitect.git
 ```
 
 ## Contributing
