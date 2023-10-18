@@ -5,7 +5,8 @@ Architecting the transformation of planets and celestial bodies for human habita
 - [Description](#description)
 - [Mission](#mission)
 - [Vision](#vision) 
-- [Technologies](#technologies) 
+- [Technologies](#technologies)
+- [Contributor Guide](#contributor-guide) 
 
 # Description 
 
@@ -62,6 +63,83 @@ TerraformingArchitect leverages a range of cutting-edge technologies to fulfill 
 11. **Communication Systems:** Robust communication systems, including interplanetary networks, are integral to TerraformingArchitect's operations. These systems facilitate real-time data exchange and coordination between AI agents and human operators.
 
 TerraformingArchitect integrates these technologies seamlessly to execute its mission, ensuring that the transformation of celestial bodies for human habitation is not only feasible but sustainable and ethical.
+
+Creating a contributor guide for a GitHub project is a valuable step in fostering collaboration and maintaining a healthy open-source community. Below is a template you can use to create a GitHub contributor guide for your project:
+
+# Contributor Guide
+
+Welcome to [Your Project Name]! We appreciate your interest in contributing to our open-source project. By following this guide, you'll learn how to contribute effectively and be part of our community. 
+
+## Table of Contents
+1. [Getting Started](#getting-started)
+    - [Code of Conduct](#code-of-conduct)
+    - [Development Environment Setup](#development-environment-setup)
+    - [Fork the Repository](#fork-the-repository)
+2. [Contributing](#contributing)
+    - [Branching Strategy](#branching-strategy)
+    - [Coding Guidelines](#coding-guidelines)
+    - [Commit Guidelines](#commit-guidelines)
+    - [Pull Request Guidelines](#pull-request-guidelines)
+3. [Review and Merge Process](#review-and-merge-process)
+4. [Reporting Issues](#reporting-issues)
+5. [Community](#community)
+    - [Code of Conduct](#code-of-conduct)
+    - [Communication Channels](#communication-channels)
+6. [Acknowledgments](#acknowledgments)
+
+## Getting Started
+
+### Code of Conduct
+We have adopted a [Code of Conduct](CODE_OF_CONDUCT.md) to ensure a friendly and inclusive environment. We expect all contributors to follow these guidelines when participating in the project.
+
+### Development Environment Setup
+To get started, you'll need to set up your development environment. Refer to the [documentation](CONTRIBUTING.md) for detailed instructions.
+
+### Fork the Repository
+Before contributing, you should fork the repository to your own GitHub account. Then, clone the forked repository to your local machine.
+
+```bash
+git clone https://github.com/your-username/your-repo.git
+```
+
+## Contributing
+
+### Branching Strategy
+Create a new branch for each feature or bug fix. Use clear, concise names for your branches, such as "feature/new-feature" or "bugfix/issue-number."
+
+```bash
+git checkout -b feature/new-feature
+```
+
+### Coding Guidelines
+Follow our coding guidelines, which are detailed in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+
+### Commit Guidelines
+Make your commits descriptive and concise. Reference any relevant issues in your commit messages. Example: "Fixes #123 - Added new feature."
+
+### Pull Request Guidelines
+Before submitting a pull request (PR), make sure your changes are well-tested and documented. Reference any issues that the PR addresses. Follow the guidelines outlined in [PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md).
+
+## Review and Merge Process
+
+All pull requests will be reviewed by project maintainers. They will provide feedback, and once approved, your changes will be merged into the main repository.
+
+## Reporting Issues
+
+If you encounter a bug or have a feature request, please open an issue in our [Issue Tracker](../../issues). Make sure to follow the issue template when creating a new issue.
+
+## Community
+
+### Code of Conduct
+Please adhere to our [Code of Conduct](CODE_OF_CONDUCT.md) to maintain a respectful and inclusive community.
+
+### Communication Channels
+- Join our [Gitter chat](https://gitter.im/your-project/community) to interact with the community and get help.
+- You can also follow us on [Twitter](https://twitter.com/your-project) for updates and news.
+
+## Acknowledgments
+
+Thank you for your interest in contributing to [Your Project Name]! We value your time and effort and appreciate your contributions to our open-source community.
 
 # Guide 
 
