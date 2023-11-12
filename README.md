@@ -6,7 +6,10 @@ Architecting the transformation of planets and celestial bodies for human habita
 - [Mission](#mission)
 - [Vision](#vision) 
 - [Technologies](#technologies)
-- [Contributor Guide](#contributor-guide) 
+- [Contributor Guide](#contributor-guide)
+- [Guide](#guide)
+- [Roadmap](#roadmap)
+- [Aknowledgement](aknowledgement.md) 
 
 # Description 
 
