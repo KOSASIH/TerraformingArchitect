@@ -1335,8 +1335,8 @@ This markdown code snippet represents a user interface for the celestial body se
 
 # Roadmap 
 
-1. **Introduction to TeraformingArchitect:**
-   - Define the purpose and goals of TeraformingArchitect.
+1. **Introduction to TerraformingArchitect:**
+   - Define the purpose and goals of TerraformingArchitect.
    - Highlight the significance of AI in the transformation of celestial bodies.
 
 2. **Research and Analysis (Months 1-6):**
