@@ -1332,3 +1332,55 @@ An example usage of the function is provided, where the desired atmospheric comp
 ```
 
 This markdown code snippet represents a user interface for the celestial body selection tool. The interface allows users to browse and select celestial bodies for terraforming based on criteria such as size, composition, and distance from the sun. The selected celestial body is displayed, and the user can choose various terraforming options such as atmospheric composition, temperature changes, and introduction of new organisms. Finally, the user can confirm their selection.
+
+# Roadmap 
+
+1. **Introduction to TeraformingArchitect:**
+   - Define the purpose and goals of TeraformingArchitect.
+   - Highlight the significance of AI in the transformation of celestial bodies.
+
+2. **Research and Analysis (Months 1-6):**
+   - Conduct in-depth studies on target planets and celestial bodies.
+   - Analyze environmental conditions, resources, and potential challenges.
+   - Explore existing AI technologies applicable to terraforming.
+
+3. **AI Development (Months 7-12):**
+   - Develop advanced AI algorithms for climate control, resource management, and adaptation.
+   - Implement machine learning models for real-time data analysis and decision-making.
+
+4. **Simulation Testing (Months 13-18):**
+   - Create virtual simulations to test AI systems in various planetary conditions.
+   - Evaluate the effectiveness of AI-driven terraforming strategies.
+
+5. **Prototype Construction (Months 19-24):**
+   - Build small-scale prototypes to demonstrate AI-controlled environmental modifications.
+   - Test the integration of AI with physical systems.
+
+6. **Optimization and Iteration (Months 25-30):**
+   - Analyze feedback from prototypes to optimize AI algorithms.
+   - Iterate on the design and functionality for enhanced performance.
+
+7. **Collaboration with Space Agencies (Months 31-36):**
+   - Establish partnerships with space agencies for joint missions.
+   - Collaborate on integrating TeraformingArchitect with space exploration initiatives.
+
+8. **Regulatory Compliance (Months 37-42):**
+   - Work with international space organizations to establish regulatory frameworks.
+   - Ensure compliance with ethical and environmental standards.
+
+9. **Full-Scale Implementation (Months 43-48):**
+   - Deploy TeraformingArchitect on a larger scale for targeted celestial bodies.
+   - Monitor and adjust AI systems for ongoing planetary transformation.
+
+10. **Public Awareness and Education (Months 49-54):**
+    - Launch public awareness campaigns about the benefits and risks of terraforming.
+    - Provide educational resources on AI and space exploration.
+
+11. **Continuous Improvement (Months 55+):**
+    - Continuously update AI algorithms based on ongoing data and feedback.
+    - Explore additional applications for TeraformingArchitect in space exploration.
+
+12. **Future Research and Expansion (Ongoing):**
+    - Investigate new technologies and advancements for further innovation.
+    - Explore the potential of TeraformingArchitect beyond our solar system.
+
